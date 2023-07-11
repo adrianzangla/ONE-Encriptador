@@ -27,6 +27,7 @@ textArea.addEventListener('input', () => {
         hideEncryptedMessage();
         textArea.style.height = 'auto';
     }
+    textArea.style.height = 'auto';
     textArea.style.height = textArea.scrollHeight + 'px';
 });
 

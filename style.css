@@ -210,6 +210,10 @@ textarea::placeholder {
         margin: 16px;
     }
 
+    textarea {
+        max-width: 343px;
+    }
+
     header {
         margin-top: 8px;
     }
