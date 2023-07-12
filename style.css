@@ -174,14 +174,14 @@ textarea::placeholder {
         gap: 32px;
     }
 
-    header {
-        margin-top: 73.42px;
-        margin-bottom: 36px;
-    }
-
     .message-card {
         flex: 0 0 133px;
         max-width: 100%;
+    }
+
+    header {
+        margin-top: 73.42px;
+        margin-bottom: 36px;
     }
 
     .logo-desktop {
@@ -194,6 +194,11 @@ textarea::placeholder {
 
     .empty-space {
         display: none;
+    }
+
+    main {
+        flex: 1 1 auto;
+        max-width: 100%;
     }
 
     .message-card-image {
@@ -216,5 +221,6 @@ textarea::placeholder {
 
     .button {
         flex: 0 1 67px;
+        width: auto;
     }
 }
