@@ -6,34 +6,30 @@
     font-style: normal;
 }
 
-html {
-    height: 100%;
-    display: flex;
-}
-
 body {
     background: var(--light-blue-light-blue-100, #F3F5FC);
-    margin: 40px;
     display: flex;
     flex-flow: row nowrap;
     gap: 80px;
-    flex-grow: 1;
+    min-height: 95vh;
+    margin: 40px;
 }
 
 .container {
     display: flex;
     flex-flow: column nowrap;
-    flex: 1 1 70%;
+    flex: 1 1 auto;
     gap: 80px;
     margin-bottom: 32px;
 }
 
 .message-card {
-    flex: 0 0 auto;
+    flex: 0 0 400px;
+    max-width: 400px;
     border-radius: 32px;
     background: var(--white, #FFF);
     box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
-    padding: 2.2vw;
+    padding: 32px;
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
@@ -43,7 +39,8 @@ body {
 .container-2 {
     display: flex;
     flex-flow: row nowrap;
-    flex-grow: 1;
+    flex: 1 1 auto;
+    gap: 0;
 }
 
 .logo-desktop {
@@ -58,23 +55,22 @@ body {
 }
 
 .empty-space {
-    flex-shrink: 1;
-    flex-basis: 16.7%;
+    flex: 1 2 200px;
 }
 
 main {
     display: flex;
     flex-flow: column nowrap;
-    flex-grow: 1;
+    flex: 1 1 680px;
 }
 
 textarea {
-    flex-grow: 1;
     border: none;
     outline: none;
     background: var(--light-blue-light-blue-100, #F3F5FC);
     overflow: hidden;
     resize: none;
+    flex: 1 1 auto;
 }
 
 textarea,
@@ -99,7 +95,7 @@ textarea::placeholder {
 
 .tooltip {
     color: var(--gray-gray-400, #495057);
-    font-size: 12px;
+    font-size: 16px;
     font-weight: 400;
     line-height: 150%;
     opacity: 0.800000011920929;
@@ -116,7 +112,7 @@ textarea::placeholder {
     border-radius: 24px;
     flex: 1 1 328px;
     text-align: center;
-    padding: 24px;
+    padding: 24px 0px;
     font-size: 16px;
     font-weight: 400;
     line-height: normal;
@@ -143,7 +139,6 @@ textarea::placeholder {
     word-wrap: break-word;
     hyphens: auto;
     white-space: normal;
-    max-width: 24vw;
 }
 
 .message-card-image {
@@ -170,18 +165,23 @@ textarea::placeholder {
 
 .copy-button {
     display: none;
-    flex: 0 1 auto;
+    flex: 0 0 67px;
 }
 
 @media only screen and (max-width: 768px) {
-
     body {
-        flex-direction: column;
-        gap: 64px;
+        flex-flow: column nowrap;
+        gap: 32px;
     }
 
-    .empty-space {
-        display: none;
+    header {
+        margin-top: 73.42px;
+        margin-bottom: 36px;
+    }
+
+    .message-card {
+        flex: 0 0 133px;
+        max-width: 100%;
     }
 
     .logo-desktop {
@@ -192,26 +192,18 @@ textarea::placeholder {
         display: block;
     }
 
-    header {
-        margin-top: 33.42px;
+    .empty-space {
+        display: none;
     }
 
     .message-card-image {
         display: none;
-    }
-
-    .encrypted-message {
-        max-width: 94vw;
     }
 }
 
 @media only screen and (max-width: 375px) {
     body {
         margin: 16px;
-    }
-
-    textarea {
-        max-width: 343px;
     }
 
     header {
@@ -223,6 +215,6 @@ textarea::placeholder {
     }
 
     .button {
-        flex: 0 1 auto;
+        flex: 0 1 67px;
     }
 }
