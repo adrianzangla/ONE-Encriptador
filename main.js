@@ -7,18 +7,32 @@ const messageCard = document.querySelector('.message-card');
 const copyButton = document.querySelector('.copy-button');
 const unencryptButton = document.querySelector('.unencrypt-button');
 
+function verifyMessage(message) {
+    if (message.length === 0) {
+        return false;
+    }
+    if (/[A-Z\u00C0-\u00D6\u00D8-\u00DE\u00E0-\u00F6\u00F8-\u00FE]/.test(message)) {
+        alert('Solo letras minúsculas y sin acentos');
+        return false;
+    }
+    return true;
+}
+
 encryptButton.addEventListener('click', () => {
     let text = textArea.value;
-    text = text.replace(/a/g, 'A');
-    text = text.replace(/e/g, 'E');
-    text = text.replace(/i/g, 'I');
-    text = text.replace(/o/g, 'O');
-    text = text.replace(/u/g, 'U');
-    text = text.replace(/A/g, 'ai');
-    text = text.replace(/E/g, 'enter');
-    text = text.replace(/I/g, 'imes');
-    text = text.replace(/O/g, 'ober');
-    text = text.replace(/U/g, 'ufat');
+    if (!verifyMessage(text)) {
+        return;
+    }
+    text = text.replace(/a/g, '$A$');
+    text = text.replace(/e/g, '$E$');
+    text = text.replace(/i/g, '$I$');
+    text = text.replace(/o/g, '$O$');
+    text = text.replace(/u/g, '$U$');
+    text = text.replace(/\$A\$/g, 'ai');
+    text = text.replace(/\$E\$/g, 'enter');
+    text = text.replace(/\$I\$/g, 'imes');
+    text = text.replace(/\$O\$/g, 'ober');
+    text = text.replace(/\$U\$/g, 'ufat');
     displayEncryptedMessage(text);
 });
 
@@ -33,6 +47,9 @@ textArea.addEventListener('input', () => {
 
 unencryptButton.addEventListener('click', () => {
     let text = textArea.value;
+    if (!verifyMessage(text)) {
+        return;
+    }
     text = text.replace(/ai/g, 'A');
     text = text.replace(/enter/g, 'E');
     text = text.replace(/imes/g, 'I');
