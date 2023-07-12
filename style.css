@@ -29,7 +29,7 @@ body {
 }
 
 .message-card {
-    flex: 0 0 30%;
+    flex: 0 0 auto;
     border-radius: 32px;
     background: var(--white, #FFF);
     box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
@@ -106,7 +106,7 @@ textarea::placeholder {
 }
 
 .button-container {
-    flex-grow: 1;
+    flex: 1 1 auto;
     display: flex;
     flex-flow: row nowrap;
     gap: 24px;
@@ -149,7 +149,7 @@ textarea::placeholder {
 .message-card-image {
     width: 336px;
     height: 304px;
-    margin-bottom: 1.6vh;
+    margin-bottom: 16px;
 }
 
 .message-card-title {
