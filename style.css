@@ -8,7 +8,7 @@
 
 body {
     background: var(--light-blue-light-blue-100, #F3F5FC);
-    min-height: 92vh;
+    min-height: 91vh;
     margin: 40px;
     display: flex;
     flex-flow: column nowrap;
