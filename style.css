@@ -123,10 +123,18 @@ textarea::placeholder {
     color: var(--white, #FFF);
 }
 
+.encrypt-button:hover {
+    background: #082f5f;
+}
+
 .unencrypt-button {
     border: 1px solid var(--dark-blue-dark-blue-300, #0A3871);
     background: #D8DFE8;
     color: var(--dark-blue-dark-blue-300, #0A3871);
+}
+
+.unencrypt-button:hover {
+    background: #ccd5e1;
 }
 
 .encrypted-message {

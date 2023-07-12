@@ -65,7 +65,18 @@ unencryptButton.addEventListener('click', () => {
 
 copyButton.addEventListener('click', () => {
     const range = document.createRange();
-    range.selectNode(document.getElementsByClassName('encrypted-message')[0]);
+    range.selectNode(document.querySelector('.encrypted-message'));
+    window.getSelection().removeAllRanges();
+    window.getSelection().addRange(range);
+    document.execCommand('copy');
+    window.getSelection().removeAllRanges();
+});
+
+copyButton.addEventListener('click', () => {
+    const range = document.createRange();
+    const encryptedMessage = document.querySelector('.encrypted-message');
+    const textNode = encryptedMessage.firstChild;
+    range.selectNodeContents(textNode);
     window.getSelection().removeAllRanges();
     window.getSelection().addRange(range);
     document.execCommand('copy');
