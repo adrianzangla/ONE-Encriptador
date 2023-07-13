@@ -1,254 +1,247 @@
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    font-family: Inter, sans-serif;
+    font-family: Inter;
     font-style: normal;
 }
 
+:root {
+    --light-blue-light-blue-100: #F3F5FC;
+    --dark-blue-dark-blue-300: #0A3871;
+    --gray-gray-400: #495057;
+    --white: #FFF;
+    --gray-gray-500: #343A40;
+}
+
 body {
-    background: var(--light-blue-light-blue-100, #F3F5FC);
-    min-height: 91vh;
-    margin: 40px;
+    min-height: 100vh;
+    max-width: 100vw;
+    background-color: var(--light-blue-light-blue-100);
+    padding: 40px;
     display: flex;
-    flex-flow: column nowrap;
+    gap: 80px;
+}
+
+.column-container {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
     gap: 32px;
 }
 
-.container {
-    display: flex;
-    flex-flow: row nowrap;
-    gap: 80px;
-    flex: 1 0 auto;
-}
-
-footer {
-    font-size: 16px;
-    font-weight: 600;
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-around;
-}
-
-footer img {
-    width: 16px;
-    height: 16px;
-}
-
-.container-2 {
-    display: flex;
-    flex-flow: column nowrap;
-    flex: 1 1 auto;
-    gap: 80px;
-    margin-bottom: 32px;
-}
-
-.message-card {
-    flex: 0 0 400px;
-    max-width: 400px;
-    border-radius: 32px;
-    background: var(--white, #FFF);
-    box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
-    padding: 32px;
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: center;
-    gap: 16px;
-}
-
-.container-3 {
-    display: flex;
-    flex-flow: row nowrap;
-    flex: 1 1 auto;
-    gap: 0;
+header {
+    margin-bottom: 48px;
 }
 
 .logo-desktop {
-    width: 120px;
-    height: 48px;
+    max-width: 120px;
+    max-height: 48px;
 }
 
-.logo-tablet {
+.logo-mobile {
     display: none;
-    width: 31.086px;
-    height: 50.581px;
-}
-
-.empty-space {
-    flex: 1 2 200px;
 }
 
 main {
+    flex-grow: 1;
     display: flex;
-    flex-flow: column nowrap;
-    flex: 1 1 680px;
+    flex-direction: column;
+    gap: 16px;
+    padding-left: 200px;
 }
 
-textarea {
+#input,
+#message {
+    flex-grow: 1;
+    width: 100%;
     border: none;
     outline: none;
-    background: var(--light-blue-light-blue-100, #F3F5FC);
-    overflow: hidden;
-    resize: none;
-    flex: 1 1 auto;
 }
 
-textarea,
-textarea::placeholder {
-    color: var(--dark-blue-dark-blue-300, #0A3871);
+#input {
+    background-color: var(--light-blue-light-blue-100);
+}
+
+#input,
+#input::placeholder {
+    color: var(--dark-blue-dark-blue-300);
     font-size: 32px;
     font-weight: 400;
     line-height: 150%;
 }
 
-.buttons-and-tooltip-container {
-    flex-grow: 0;
+.tooltip {
     display: flex;
-    flex-flow: column nowrap;
-    gap: 16px;
+    gap: 8px;
 }
 
 .exclamation {
-    width: 16px;
-    height: 16px;
+    max-width: 16px;
+    max-height: 16px;
 }
 
-.tooltip {
-    color: var(--gray-gray-400, #495057);
-    font-size: 16px;
+h3 {
+    font-size: 12px;
     font-weight: 400;
     line-height: 150%;
+    color: var(--gray-gray-400);
     opacity: 0.800000011920929;
 }
 
-.button-container {
-    flex: 1 1 auto;
+.button-group {
     display: flex;
-    flex-flow: row nowrap;
     gap: 24px;
 }
 
-.button {
+button {
+    padding: 24px;
     border-radius: 24px;
-    flex: 1 1 328px;
-    text-align: center;
-    padding: 24px 0px;
     font-size: 16px;
     font-weight: 400;
-    line-height: normal;
+    max-width: 328px;
 }
 
-.encrypt-button {
-    background: var(--dark-blue-dark-blue-300, #0A3871);
-    color: var(--white, #FFF);
+.button-1,
+.button-2,
+.button-3 {
+    border-width: 1px;
 }
 
-.encrypt-button:hover {
-    background: #082f5f;
+.button-1,
+.button-2 {
+    flex-basis: 50%;
 }
 
-.unencrypt-button {
-    border: 1px solid var(--dark-blue-dark-blue-300, #0A3871);
-    background: #D8DFE8;
-    color: var(--dark-blue-dark-blue-300, #0A3871);
+.button-1 {
+    background-color: var(--dark-blue-dark-blue-300);
+    color: var(--white);
+    border-color: var(--dark-blue-dark-blue-300);
 }
 
-.unencrypt-button:hover {
-    background: #ccd5e1;
+.button-2,
+.button-3 {
+    background-color: #D8DFE8;
+    color: var(--dark-blue-dark-blue-300);
+    border-color: var(--dark-blue-dark-blue-300);
 }
 
-.encrypted-message {
-    display: none;
-    color: var(--gray-gray-400, #495057);
-    font-size: 24px;
-    font-weight: 400;
-    line-height: 150%;
-    overflow-wrap: break-word;
-    word-wrap: break-word;
-    hyphens: auto;
-    white-space: normal;
-}
-
-.message-card-image {
-    width: 336px;
-    height: 304px;
-    margin-bottom: 16px;
-}
-
-.message-card-title {
-    color: var(--gray-gray-500, #343A40);
+.card {
+    max-width: 400px;
+    flex-basis: 400px;
+    border-radius: 32px;
+    background-color: var(--white);
+    box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 16px;
+    padding: 32px;
     text-align: center;
+}
+
+.card-image {
+    max-width: 336px;
+    max-height: 304px;
+    margin-bottom: 16px;
+    width: 100%;
+}
+
+h1 {
+    color: var(--gray-gray-500);
     font-size: 24px;
     font-weight: 700;
     line-height: 120%;
 }
 
-.message-card-paragraph {
-    color: var(--gray-gray-400, #495057);
-    text-align: center;
+h2 {
+    color: var(--gray-gray-400);
     font-size: 16px;
     font-weight: 400;
     line-height: 150%;
 }
 
-.copy-button {
+#message {
+    color: var(--gray-gray-400);
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 150%;
+    background-color: var(--white);
+    flex-grow: 1;
     display: none;
-    flex: 0 0 67px;
+}
+
+.button-3 {
+    min-width: 100%;
+    display: none;
+}
+
+footer {
+    display: flex;
+    justify-content: flex-start;
+    gap: 16px;
+    padding-left: 16px;
+}
+
+.footer-icon {
+    max-width: 16px;
+    max-height: 16px;
+}
+
+@media only screen and (max-width: 1024px) {
+    main {
+        padding-left: 0;
+    }
 }
 
 @media only screen and (max-width: 768px) {
-    .container {
-        flex-flow: column nowrap;
+    body {
+        flex-direction: column;
         gap: 32px;
-    }
-
-    .message-card {
-        flex: 0 0 133px;
-        max-width: 100%;
     }
 
     header {
         margin-top: 33.42px;
-        margin-bottom: 36px;
+        margin-bottom: 84px;
     }
 
     .logo-desktop {
         display: none;
     }
 
-    .logo-tablet {
+    .logo-mobile {
         display: block;
+        max-width: 31.086px;
+        max-height: 50.581px;
     }
 
-    .empty-space {
-        display: none;
-    }
-
-    main {
-        flex: 1 1 auto;
+    .card {
         max-width: 100%;
     }
 
-    .message-card-image {
+    .card-image {
         display: none;
     }
 }
 
 @media only screen and (max-width: 375px) {
-    .container {
-        margin: 16px;
+    body {
+        padding: 16px;
     }
 
     header {
-        margin-top: 8px;
+        margin: 8px 0;
     }
 
-    .button-container {
-        flex-direction: column;
+    .card {
+        margin: 0 8px 24px 8px;
     }
 
-    .button {
-        flex: 0 1 67px;
-        width: auto;
+    .button-group {
+        flex-wrap: wrap;
+    }
+
+    button {
+        min-width: 100%;
     }
 }
