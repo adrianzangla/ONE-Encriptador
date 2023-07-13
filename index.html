@@ -24,8 +24,8 @@
                 <h3>Solo letras minúsculas y sin acentos</h3>
             </div>
             <div class="button-group">
-                <button class="button-1">Encriptar</button>
-                <button class="button-2">Desencriptar</button>
+                <button type="button" class="button-1" onclick="encryptButtonOnClick()">Encriptar</button>
+                <button type="button" class="button-2" onclick="unencryptButtonOnClick()">Desencriptar</button>
             </div>
         </main>
         <footer>
@@ -39,7 +39,7 @@
         <h1>Ningún mensaje fue encontrado</h1>
         <h2>Ingresa el texto que desees encriptar o desencriptar.</h2>
         <textarea name="" id="message"></textarea>
-        <button class="button-3">Copiar</button>
+        <button type="button" class="button-3" onclick="copyButtonOnClick()">Copiar</button>
     </section>
     <script src="script.js"></script>
 </body>

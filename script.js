@@ -6,26 +6,37 @@ const cardImage = document.querySelector('.card-image');
 const h1 = document.querySelector('h1');
 const h2 = document.querySelector('h2');
 
-encryptButton.addEventListener('click', () => {
+function encryptButtonOnClick() {
     const input = document.querySelector('#input').value;
     if (!verifyInput(input)) {
         return;
     }
     display(encrypt(input));
-});
+}
 
-unencryptButton.addEventListener('click', () => {
+function unencryptButtonOnClick() {
     const input = document.querySelector('#input').value;
     if (!verifyInput(input)) {
         return;
     }
     display(unencrypt(input));
-});
+}
 
-copyButton.addEventListener('click', () => {
+function copyButtonOnClick() {
     const messageTextArea = document.querySelector('#message');
     copy(messageTextArea);
-});
+    messageTextArea.style.display = 'none';
+    copyButton.style.display = 'none';
+    card.style.justifyContent = 'center';
+    if (window.innerWidth > 768) {
+        cardImage.style.display = 'block';
+    }
+    h1.style.display = 'block';
+    h2.style.display = 'block';
+    cardImage.style = '';
+    const input = document.querySelector('#input');
+    input.select();
+}
 
 function verifyInput(input) {
     if (input.length === 0) {
@@ -68,18 +79,6 @@ function unencrypt(input) {
 function copy(textarea) {
     textarea.select();
     document.execCommand("copy");
-    const messageTextArea = document.querySelector('#message');
-    messageTextArea.style.display = 'none';
-    copyButton.style.display = 'none';
-    card.style.justifyContent = 'center';
-    if (window.innerWidth > 768) {
-        cardImage.style.display = 'block';
-    }
-    h1.style.display = 'block';
-    h2.style.display = 'block';
-    cardImage.style = '';
-    const input = document.querySelector('#input');
-    input.select();
 }
 
 function display(message) {
