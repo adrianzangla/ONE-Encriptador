@@ -217,6 +217,7 @@ footer {
 
     .card {
         max-width: 100%;
+        flex-basis: auto;
     }
 
     .card-image {
